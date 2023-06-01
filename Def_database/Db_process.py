@@ -1,6 +1,6 @@
 import psycopg2
 
-class Db_progress:
+class Db_process:
     
     def __init__(self):
         self.conn = None
