@@ -13,7 +13,7 @@ pop = [2.519, 3.692, 5.263, 6.972]
 lables_d = ["第一年","第二年","第三年","第四年"]        #設置x軸想顯示的標籤
 lables = []
 
-plt.subplots_adjust(bottom=.15)
+plt.subplots_adjust(bottom=.2)  #將整個底部往上移動，其他位置不變
 
 for n in lables_d :          #在字串中加入跳行，實現豎直文字
     lables.append('\n'.join(n))
@@ -22,6 +22,8 @@ for n in lables_d :          #在字串中加入跳行，實現豎直文字
 plt.title("人口成長趨勢圖",fontproperties = font)
 plt.xlabel ("年份",fontproperties = font)
 plt.ylabel("人\n口",fontproperties = font,rotation = 0,labelpad=10)     #lablepad讓標籤往左邊一點
+plt.text(1970,6, '標籤範例',fontproperties = font,color = "#f00")   #在 x:1970 y6 的地方加入標籤
+plt.grid(True)                                          # 是否開啟網格線
 plt.xticks(ticks = year,                                # x軸有哪些資料標籤 (list)
            labels  = lables,                            # x軸資料標籤想顯示的型態，必須與ticks數量一致(list)
            color = '#f00',                              # 字體顏色
