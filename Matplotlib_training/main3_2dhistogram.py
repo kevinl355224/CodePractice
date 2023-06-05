@@ -65,7 +65,7 @@ plt.hist(x,bins = 100)
 #簡單的介紹圖片
 plt.subplot(2,2,4)
 plt.gca().axis('off')   #關閉軸座標
-plt.text(x=-0,y=0.4,fontproperties = font,fontsize = 15,
+plt.text(x=-0,y=0.4,fontproperties = font,fontsize = 13,
          s = "簡單的展示\n二維的直方圖，數量越多，\n越接近黃色")
 
 plt.show()
