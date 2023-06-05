@@ -1,6 +1,9 @@
 #2d的直方圖練習
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+font = fm.FontProperties(fname="fonts/SourceHanSansCNRegular.otf")
 
 n = 10000
 x = np.random.standard_normal(n)                                    #產生1萬個,均值0，標準差1的隨機數
@@ -40,10 +43,12 @@ c = hist[xidx, yidx]      #二維數值
 
 # 在x,y一維空間，帶入數量c的二維數值
 plt.subplot(2,2,1)
+plt.title("二維直方圖",fontproperties = font)
 plt.scatter(x, y,c=c)  
 
 # y 數量一維圖
 plt.subplot(2,2,2)    
+plt.title("Y的直方圖",fontproperties = font)
 # 將 x 顛倒
 plt.gca().invert_xaxis()
 # 將y標籤移到右邊
@@ -53,5 +58,14 @@ plt.hist(y,orientation= "horizontal",bins=100)
 
 # x數量一維圖
 plt.subplot(2,2,3)
+#plt.title("X的直方圖",fontproperties = font)   #原本的title只能顯示在上面，所以用suptitle
+plt.suptitle("X的直方圖",fontproperties = font,x=0.3,y=0.06)
 plt.hist(x,bins = 100)
+
+#簡單的介紹圖片
+plt.subplot(2,2,4)
+plt.gca().axis('off')   #關閉軸座標
+plt.text(x=-0,y=0.4,fontproperties = font,fontsize = 15,
+         s = "簡單的展示\n二維的直方圖，數量越多，\n越接近黃色")
+
 plt.show()
